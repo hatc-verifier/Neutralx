@@ -20,7 +20,7 @@
         <div class="container mx-auto px-4 h-16 flex justify-between items-center">
             <div class="flex items-center gap-2">
                 <img src="29173.jpg" class="h-8 md:h-9">
-                <span class="text-xl font-black uppercase tracking-tighter">Neutral<span class="text-red-600">X</span></span>
+                <span class="text-xl font-black uppercase tracking-tighter text-slate-900">Neutral<span class="text-red-600">X</span></span>
             </div>
             <div class="flex items-center gap-4 text-gray-500">
                 <i class="fas fa-search cursor-pointer"></i>
@@ -34,11 +34,11 @@
             <h2 class="text-lg md:text-2xl font-black uppercase tracking-widest italic inline-block border-b-2 border-red-600 pb-1">
                 Upgrade Your Ride
             </h2>
-            <div class="mt-4 flex justify-center gap-6 text-[9px] font-bold uppercase tracking-[0.2em] text-gray-400">
+            <nav class="mt-4 flex justify-center gap-6 text-[9px] font-bold uppercase tracking-[0.2em] text-gray-400">
                 <a href="#" class="hover:text-red-500 transition">Home</a>
                 <a href="#shop" class="hover:text-red-500 transition">Shop</a>
                 <a href="#footer" class="hover:text-red-500 transition">Contact</a>
-            </div>
+            </nav>
         </div>
     </section>
 
@@ -70,8 +70,8 @@
 
     <div id="productModal" class="fixed inset-0 bg-black/90 backdrop-blur-sm z-[100] hidden flex items-center justify-center p-4">
         <div class="bg-white w-full max-w-sm rounded-3xl overflow-hidden relative shadow-2xl">
-            <button onclick="closeDetails()" class="absolute top-4 right-4 bg-gray-100 w-8 h-8 rounded-full flex items-center justify-center text-xl">&times;</button>
-            <div class="bg-gray-50 p-6 flex items-center justify-center">
+            <button onclick="closeDetails()" class="absolute top-4 right-4 bg-gray-100 w-8 h-8 rounded-full flex items-center justify-center text-xl hover:bg-red-500 hover:text-white transition">&times;</button>
+            <div class="bg-gray-50 p-6 flex items-center justify-center border-b">
                 <img id="modalImg" src="" class="h-44 object-contain">
             </div>
             <div class="p-6">
@@ -93,15 +93,19 @@
         if (typeof myProducts !== 'undefined') {
             myProducts.forEach(product => {
                 const numericPrice = parseInt(product.price.replace(/[^0-9]/g, '')) || 0;
+                // ২০০ টাকা ক্রস প্রাইস মেইনটেইন করা হচ্ছে
                 const fakeOldPrice = numericPrice + 200;
 
                 container.innerHTML += `
                     <div class="product-card bg-white rounded-2xl border border-gray-100 overflow-hidden flex flex-col h-full shadow-sm">
                         <div class="relative bg-gray-50 h-40 md:h-48 p-4 cursor-pointer flex items-center justify-center" onclick="openDetails('${product.id}')">
                             <img src="${product.image}" class="max-h-full max-w-full object-contain">
-                            <div class="absolute top-2 left-2 flex flex-col gap-1">
-                                <span class="bg-red-600 text-white text-[6px] font-black px-1.5 py-0.5 rounded uppercase w-fit shadow-sm">Hot</span>
-                                <span class="bg-green-500 text-white text-[6px] font-black px-1.5 py-0.5 rounded uppercase w-fit shadow-sm">In Stock</span>
+                            
+                            <div class="absolute top-2 left-2">
+                                <span class="bg-red-600 text-white text-[6px] font-black px-1.5 py-0.5 rounded uppercase shadow-sm">Hot</span>
+                            </div>
+                            <div class="absolute top-2 right-2">
+                                <span class="bg-green-500 text-white text-[6px] font-black px-1.5 py-0.5 rounded uppercase shadow-sm">In Stock</span>
                             </div>
                         </div>
                         <div class="p-4 flex flex-col flex-grow text-center">
@@ -115,8 +119,6 @@
                     </div>
                 `;
             });
-        } else {
-            console.error("products.js ফাইল লোড হয়নি!");
         }
 
         function openDetails(id) {
