@@ -7,24 +7,19 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body class="bg-gray-50 font-sans">
+<body class="bg-gray-50 font-sans text-slate-900">
 
     <nav class="bg-white shadow-sm sticky top-0 z-50 py-3">
         <div class="container mx-auto px-4 flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <img src="29173.jpg" alt="Logo" class="h-10 md:h-12 drop-shadow-sm">
-                <h1 class="text-xl md:text-2xl font-black uppercase tracking-tighter text-slate-800">
+                <img src="29173.jpg" alt="Logo" class="h-10 md:h-12">
+                <h1 class="text-xl md:text-2xl font-black uppercase tracking-tighter">
                     Neutral<span class="text-red-600">X</span>
                 </h1>
             </div>
-            <div class="flex items-center gap-5 text-slate-600">
-                <div class="hidden md:flex gap-6 font-semibold text-sm uppercase">
-                    <a href="#" class="hover:text-red-600">Home</a>
-                    <a href="#" class="hover:text-red-600">Shop</a>
-                    <a href="#" class="hover:text-red-600">About</a>
-                </div>
+            <div class="flex items-center gap-5">
                 <div class="relative cursor-pointer">
-                    <i class="fas fa-shopping-cart text-xl text-slate-800"></i>
+                    <i class="fas fa-shopping-cart text-xl"></i>
                     <span class="absolute -top-2 -right-2 bg-red-600 text-white text-[10px] px-1 rounded-full">0</span>
                 </div>
             </div>
@@ -32,47 +27,31 @@
     </nav>
 
     <section class="container mx-auto px-4 mt-6">
-        <div class="bg-gradient-to-r from-slate-900 to-slate-800 rounded-2xl p-8 md:p-16 text-white flex flex-col items-center text-center shadow-xl">
-            <span class="bg-red-600 text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-widest">New Season 2025</span>
-            <h2 class="text-3xl md:text-6xl font-black mb-4 leading-tight">UPGRADE YOUR RIDE <br> <span class="text-red-500">WITH NEUTRALX</span></h2>
-            <p class="text-gray-400 max-w-xl mb-8 text-sm md:text-lg">বাংলাদেশে প্রিমিয়াম কোয়ালিটির মোটরসাইকেল পার্টস এখন আপনার হাতের নাগালে। আজই সংগ্রহ করুন আপনার পছন্দের এক্সেসরিজ।</p>
-            <div class="flex gap-4">
-                <button class="bg-white text-slate-900 font-bold px-8 py-3 rounded-lg hover:bg-red-600 hover:text-white transition shadow-lg">Browse Shop</button>
-            </div>
+        <div class="bg-slate-900 rounded-3xl p-8 md:p-16 text-white text-center shadow-xl border-b-4 border-red-600">
+            <span class="bg-red-600 text-[10px] font-bold px-3 py-1 rounded-full mb-4 inline-block uppercase tracking-widest">Premium Quality</span>
+            <h2 class="text-3xl md:text-6xl font-black mb-4 leading-tight">UPGRADE YOUR RIDE</h2>
+            <p class="text-gray-400 max-w-xl mb-8 text-sm md:text-lg mx-auto">বেস্ট কোয়ালিটির মোটরসাইকেল পার্টস এখন NeutralX-এ।</p>
         </div>
     </section>
 
     <main class="container mx-auto px-4 py-12">
-        <div class="flex justify-between items-end mb-8 border-b pb-4">
-            <div>
-                <h3 class="text-2xl font-black text-slate-800 uppercase italic">Featured Collection</h3>
-                <p class="text-gray-500 text-xs">Explore our most popular motorcycle accessories</p>
-            </div>
-            <a href="#" class="text-red-600 font-bold text-sm hover:underline">View All</a>
-        </div>
-        
+        <h3 class="text-2xl font-black mb-8 border-l-4 border-red-600 pl-3 uppercase italic">Collection</h3>
         <div id="product-container" class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
             </div>
     </main>
 
-    <a href="https://wa.me/8801303842242" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition z-50">
-        <i class="fab fa-whatsapp text-3xl"></i>
-    </a>
-
-    <div id="productModal" class="fixed inset-0 bg-slate-900/80 backdrop-blur-sm z-[100] hidden flex items-center justify-center p-4">
-        <div class="bg-white w-full max-w-lg rounded-3xl overflow-hidden relative shadow-2xl animate-modal">
-            <button onclick="closeDetails()" class="absolute top-4 right-4 bg-gray-100 w-10 h-10 rounded-full flex items-center justify-center text-gray-800 text-2xl z-10 hover:bg-red-100 hover:text-red-600">&times;</button>
-            <div id="modalImgContainer" class="bg-gray-100 p-6 flex items-center justify-center">
-                <img id="modalImg" src="" class="max-h-72 object-contain drop-shadow-xl">
+    <div id="productModal" class="fixed inset-0 bg-slate-900/90 backdrop-blur-sm z-[100] hidden flex items-center justify-center p-4">
+        <div class="bg-white w-full max-w-lg rounded-3xl overflow-hidden relative shadow-2xl">
+            <button onclick="closeDetails()" class="absolute top-4 right-4 bg-gray-100 w-10 h-10 rounded-full flex items-center justify-center text-2xl z-10 hover:bg-red-100 hover:text-red-600">&times;</button>
+            <div class="bg-gray-50 p-6 flex items-center justify-center">
+                <img id="modalImg" src="" class="max-h-72 object-contain">
             </div>
             <div class="p-8">
-                <div class="flex justify-between items-start mb-4">
-                    <h2 id="modalTitle" class="text-2xl font-black text-slate-800 leading-tight uppercase"></h2>
-                    <p id="modalPrice" class="text-red-600 font-black text-2xl"></p>
-                </div>
-                <p id="modalDesc" class="text-gray-600 text-sm leading-relaxed mb-8 bg-gray-50 p-4 rounded-xl border-l-4 border-red-600"></p>
-                <button onclick="confirmOrder()" class="w-full bg-slate-900 text-white py-4 rounded-2xl font-bold shadow-lg hover:bg-red-600 flex items-center justify-center gap-3 transition-all active:scale-95">
-                    <i class="fab fa-whatsapp text-xl"></i> Order via WhatsApp
+                <h2 id="modalTitle" class="text-2xl font-black mb-2 uppercase"></h2>
+                <p id="modalPrice" class="text-red-600 font-black text-2xl mb-4"></p>
+                <p id="modalDesc" class="text-gray-600 text-sm leading-relaxed mb-8 bg-gray-50 p-4 rounded-xl"></p>
+                <button onclick="confirmOrder()" class="w-full bg-green-600 text-white py-4 rounded-2xl font-bold shadow-lg flex items-center justify-center gap-3">
+                    <i class="fab fa-whatsapp text-xl"></i> WhatsApp Order
                 </button>
             </div>
         </div>
@@ -80,43 +59,39 @@
 
     <footer class="bg-slate-900 text-white py-12 mt-20">
         <div class="container mx-auto px-4 text-center">
-            <h1 class="text-2xl font-black mb-4">NEUTRAL<span class="text-red-600 text-3xl">X</span></h1>
-            <p class="text-gray-500 text-sm mb-6 max-w-sm mx-auto">Premium Motorcycle Parts & Accessories. Established 2025.</p>
-            <div class="flex justify-center gap-6 text-gray-400 mb-8">
-                <i class="fab fa-facebook hover:text-white cursor-pointer"></i>
-                <i class="fab fa-instagram hover:text-white cursor-pointer"></i>
-                <i class="fab fa-youtube hover:text-white cursor-pointer"></i>
+            <h1 class="text-2xl font-black mb-4 uppercase">Neutral<span class="text-red-600">X</span></h1>
+            <div class="flex justify-center gap-8 text-gray-400 mb-8 text-3xl">
+                <a href="https://www.facebook.com/share/18Phw7BBeV/" target="_blank" class="hover:text-blue-500"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.tiktok.com/@neutralx42?_r=1&_t=ZS-94bmxQGyNTE" target="_blank" class="hover:text-pink-500"><i class="fab fa-tiktok"></i></a>
             </div>
-            <div class="border-t border-slate-800 pt-8 text-[10px] text-gray-600 uppercase tracking-widest">
+            <div class="border-t border-slate-800 pt-8 text-[10px] text-gray-600 uppercase">
                 © 2025 NEUTRALX LTD | ALL RIGHTS RESERVED
             </div>
         </div>
     </footer>
 
-    <script src="products.js"></script>
+    <a href="https://wa.me/8801303842242" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl z-50">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
 
+    <script src="products.js"></script>
     <script>
         const container = document.getElementById('product-container');
         let currentPName = "";
 
-        // Display Products
         myProducts.forEach(product => {
             container.innerHTML += `
-                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl transition-all group">
-                    <div class="relative overflow-hidden bg-gray-50 h-44 md:h-60 p-4" onclick="openDetails('${product.name}', '${product.price}', '${product.image}', '${product.details}')">
-                        <img src="${product.image}" class="w-full h-full object-contain cursor-pointer transition-transform duration-500 group-hover:scale-110">
-                        <span class="absolute top-2 left-2 bg-slate-900 text-white text-[10px] font-bold px-2 py-1 rounded">HOT</span>
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
+                    <div class="relative bg-gray-50 h-44 md:h-60 p-4 cursor-pointer" onclick="openDetails('${product.name}', '${product.price}', '${product.image}', '${product.details}')">
+                        <img src="${product.image}" class="w-full h-full object-contain transition-transform group-hover:scale-110">
                     </div>
                     <div class="p-4">
-                        <h4 class="font-bold text-sm text-slate-800 mb-1 truncate">${product.name}</h4>
+                        <h4 class="font-bold text-sm mb-1 truncate">${product.name}</h4>
                         <div class="flex justify-between items-center mb-4">
                             <p class="text-red-600 font-black text-lg">${product.price}</p>
-                            <span class="text-[10px] text-green-600 font-bold uppercase"><i class="fas fa-check"></i> In Stock</span>
+                            <span class="text-[10px] text-green-600 font-bold uppercase">${product.stock}</span>
                         </div>
-                        <button onclick="directOrder('${product.name}', '${product.price}')" 
-                                class="w-full bg-slate-100 text-slate-800 py-2.5 rounded-xl text-xs font-bold hover:bg-slate-900 hover:text-white transition uppercase tracking-tighter">
-                            Buy Now
-                        </button>
+                        <button onclick="directOrder('${product.name}', '${product.price}')" class="w-full bg-slate-900 text-white py-2 rounded-xl text-xs font-bold hover:bg-red-600 transition uppercase">Buy Now</button>
                     </div>
                 </div>
             `;
@@ -129,27 +104,16 @@
             document.getElementById('modalImg').src = img;
             document.getElementById('modalDesc').innerText = desc;
             document.getElementById('productModal').classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
         }
 
-        function closeDetails() {
-            document.getElementById('productModal').classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }
+        function closeDetails() { document.getElementById('productModal').classList.add('hidden'); }
 
         function directOrder(name, price) {
             const msg = `হ্যালো NeutralX!\nআমি এটি কিনতে চাই:\n📦 ${name}\n💰 দাম: ${price}`;
             window.open(`https://wa.me/8801303842242?text=${encodeURIComponent(msg)}`, '_blank');
         }
 
-        function confirmOrder() {
-            directOrder(currentPName, document.getElementById('modalPrice').innerText);
-        }
+        function confirmOrder() { directOrder(currentPName, document.getElementById('modalPrice').innerText); }
     </script>
-
-    <style>
-        .animate-modal { animation: slideUp 0.3s ease-out; }
-        @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-    </style>
 </body>
 </html>
