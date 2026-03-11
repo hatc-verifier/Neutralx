@@ -8,12 +8,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         html { scroll-behavior: smooth; }
-        /* ডার্ক গ্রে ব্যানার */
         .bg-banner-slim { background-color: #111827; }
-        /* ফুটার নেভি ব্লু কালার */
         .bg-footer-blue { background-color: #0f172a; }
         .product-card { transition: all 0.3s ease; }
-        .product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        .product-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
     </style>
 </head>
 <body class="bg-white font-sans text-slate-900">
@@ -25,11 +23,8 @@
                 <span class="text-xl font-black uppercase tracking-tighter">Neutral<span class="text-red-600">X</span></span>
             </div>
             <div class="flex items-center gap-4 text-gray-500">
-                <i class="fas fa-search cursor-pointer hover:text-red-600"></i>
-                <div class="relative">
-                    <i class="fas fa-shopping-cart text-lg"></i>
-                    <span class="absolute -top-2 -right-2 bg-red-600 text-white text-[9px] w-4 h-4 flex items-center justify-center rounded-full">0</span>
-                </div>
+                <i class="fas fa-search cursor-pointer"></i>
+                <i class="fas fa-shopping-cart text-lg"></i>
             </div>
         </div>
     </header>
@@ -48,8 +43,7 @@
     </section>
 
     <main id="shop" class="container mx-auto px-4 py-10">
-        <div class="flex items-center gap-2 mb-8">
-            <div class="w-1 h-5 bg-red-600"></div>
+        <div class="flex items-center gap-2 mb-8 border-l-4 border-red-600 pl-3">
             <h3 class="text-lg font-black uppercase tracking-tight text-gray-800">Latest Collection</h3>
         </div>
 
@@ -59,13 +53,13 @@
 
     <footer id="footer" class="bg-footer-blue text-white pt-12 pb-6">
         <div class="container mx-auto px-4 text-center">
-            <div class="flex justify-center gap-8 mb-6">
-                <a href="https://www.facebook.com/share/18Phw7BBeV/" class="text-gray-400 hover:text-blue-500 text-xl transition"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.tiktok.com/@neutralx42" class="text-gray-400 hover:text-white text-xl transition"><i class="fab fa-tiktok"></i></a>
+            <div class="flex justify-center gap-8 mb-6 text-gray-400">
+                <a href="https://www.facebook.com/share/18Phw7BBeV/" class="hover:text-blue-500 text-xl transition"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.tiktok.com/@neutralx42" class="hover:text-white text-xl transition"><i class="fab fa-tiktok"></i></a>
             </div>
-            <p class="text-[10px] text-gray-500 font-bold uppercase tracking-[0.3em] mb-4">NeutralX | Premium Quality Parts</p>
+            <p class="text-[9px] text-gray-500 font-bold uppercase tracking-[0.3em] mb-4">NeutralX | Premium Quality Parts</p>
             <div class="border-t border-slate-800 pt-6">
-                <p class="text-[8px] text-gray-600 font-bold uppercase tracking-[0.4em]">© 2026 NEUTRALX LTD | ALL RIGHTS RESERVED</p>
+                <p class="text-[8px] text-gray-700 font-bold uppercase tracking-[0.4em]">© 2026 NEUTRALX LTD | ALL RIGHTS RESERVED</p>
             </div>
         </div>
     </footer>
@@ -75,17 +69,17 @@
     </a>
 
     <div id="productModal" class="fixed inset-0 bg-black/90 backdrop-blur-sm z-[100] hidden flex items-center justify-center p-4">
-        <div class="bg-white w-full max-w-sm rounded-2xl overflow-hidden relative">
+        <div class="bg-white w-full max-w-sm rounded-3xl overflow-hidden relative">
             <button onclick="closeDetails()" class="absolute top-4 right-4 bg-gray-100 w-8 h-8 rounded-full flex items-center justify-center text-xl">&times;</button>
             <div class="bg-gray-50 p-6 flex items-center justify-center">
                 <img id="modalImg" src="" class="h-40 object-contain">
             </div>
             <div class="p-6">
                 <h2 id="modalTitle" class="text-lg font-black text-gray-900 mb-1 uppercase tracking-tight"></h2>
-                <p id="modalPrice" class="text-red-600 font-black text-2xl mb-4"></p>
+                <div id="modalPriceContainer" class="mb-4"></div>
                 <p id="modalDesc" class="text-gray-500 text-[10px] leading-relaxed mb-6 bg-gray-50 p-3 rounded-lg border-l-2 border-red-600"></p>
                 <button onclick="confirmOrder()" class="w-full bg-gray-900 text-white py-4 rounded-xl font-bold flex items-center justify-center gap-2 text-[10px] uppercase tracking-widest hover:bg-green-600 transition-all">
-                    <i class="fab fa-whatsapp text-lg"></i> Order via WhatsApp
+                    <i class="fab fa-whatsapp text-lg"></i> Buy on WhatsApp
                 </button>
             </div>
         </div>
@@ -97,15 +91,28 @@
         let currentProduct = null;
 
         myProducts.forEach(product => {
+            // Mind Game Price Calculation
+            const numericPrice = parseInt(product.price.replace(/[^0-9]/g, ''));
+            const fakeOldPrice = numericPrice + 200; // ২০০ টাকা বেশি দেখানো হচ্ছে
+
             container.innerHTML += `
                 <div class="product-card bg-white rounded-2xl border border-gray-100 overflow-hidden flex flex-col h-full shadow-sm">
                     <div class="relative bg-gray-50 h-40 md:h-48 p-4 cursor-pointer flex items-center justify-center" onclick="openDetails('${product.id}')">
                         <img src="${product.image}" class="max-h-full max-w-full object-contain">
-                        <span class="absolute top-2 left-2 bg-red-600 text-white text-[7px] font-black px-1.5 py-0.5 rounded uppercase">New</span>
+                        
+                        <div class="absolute top-2 left-2 flex flex-col gap-1">
+                            <span class="bg-red-600 text-white text-[6px] font-black px-1.5 py-0.5 rounded uppercase w-fit shadow-sm">Hot</span>
+                            <span class="bg-green-500 text-white text-[6px] font-black px-1.5 py-0.5 rounded uppercase w-fit shadow-sm">In Stock</span>
+                        </div>
                     </div>
                     <div class="p-4 flex flex-col flex-grow text-center">
-                        <h4 class="font-bold text-[10px] text-gray-800 mb-2 uppercase tracking-tight truncate">${product.name}</h4>
-                        <p class="text-red-600 font-black text-sm mb-4">${product.price}</p>
+                        <h4 class="font-bold text-[10px] text-gray-800 mb-1 uppercase tracking-tight truncate">${product.name}</h4>
+                        
+                        <div class="flex justify-center items-center gap-2 mb-3">
+                            <span class="text-gray-400 line-through text-[10px]">৳${fakeOldPrice}</span>
+                            <span class="text-red-600 font-black text-sm">${product.price}</span>
+                        </div>
+                        
                         <button onclick="directOrder('${product.name}', '${product.price}')" class="w-full bg-gray-900 text-white py-2 rounded-lg text-[9px] font-bold uppercase tracking-widest hover:bg-red-600 transition">Buy Now</button>
                     </div>
                 </div>
@@ -115,8 +122,15 @@
         function openDetails(id) {
             const product = myProducts.find(p => p.id == id);
             currentProduct = product;
+            
+            const numericPrice = parseInt(product.price.replace(/[^0-9]/g, ''));
+            const fakeOldPrice = numericPrice + 200;
+
             document.getElementById('modalTitle').innerText = product.name;
-            document.getElementById('modalPrice').innerText = product.price;
+            document.getElementById('modalPriceContainer').innerHTML = `
+                <span class="text-gray-400 line-through text-sm mr-2">৳${fakeOldPrice}</span>
+                <span class="text-red-600 font-black text-2xl">${product.price}</span>
+            `;
             document.getElementById('modalImg').src = product.image;
             document.getElementById('modalDesc').innerText = product.details;
             document.getElementById('productModal').classList.remove('hidden');
