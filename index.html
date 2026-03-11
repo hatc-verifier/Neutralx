@@ -69,16 +69,16 @@
     </a>
 
     <div id="productModal" class="fixed inset-0 bg-black/90 backdrop-blur-sm z-[100] hidden flex items-center justify-center p-4">
-        <div class="bg-white w-full max-w-sm rounded-3xl overflow-hidden relative">
-            <button onclick="closeDetails()" class="absolute top-4 right-4 bg-gray-100 w-8 h-8 rounded-full flex items-center justify-center text-xl">&times;</button>
+        <div class="bg-white w-full max-w-sm rounded-3xl overflow-hidden relative shadow-2xl">
+            <button onclick="closeDetails()" class="absolute top-4 right-4 bg-gray-100 w-8 h-8 rounded-full flex items-center justify-center text-xl hover:bg-red-600 hover:text-white transition">&times;</button>
             <div class="bg-gray-50 p-6 flex items-center justify-center">
-                <img id="modalImg" src="" class="h-40 object-contain">
+                <img id="modalImg" src="" class="h-44 object-contain">
             </div>
             <div class="p-6">
-                <h2 id="modalTitle" class="text-lg font-black text-gray-900 mb-1 uppercase tracking-tight"></h2>
+                <h2 id="modalTitle" class="text-xl font-black text-gray-900 mb-1 uppercase tracking-tight"></h2>
                 <div id="modalPriceContainer" class="mb-4"></div>
-                <p id="modalDesc" class="text-gray-500 text-[10px] leading-relaxed mb-6 bg-gray-50 p-3 rounded-lg border-l-2 border-red-600"></p>
-                <button onclick="confirmOrder()" class="w-full bg-gray-900 text-white py-4 rounded-xl font-bold flex items-center justify-center gap-2 text-[10px] uppercase tracking-widest hover:bg-green-600 transition-all">
+                <p id="modalDesc" class="text-gray-500 text-[11px] leading-relaxed mb-6 bg-gray-50 p-3 rounded-lg border-l-2 border-red-600"></p>
+                <button onclick="confirmOrder()" class="w-full bg-gray-900 text-white py-4 rounded-xl font-bold flex items-center justify-center gap-2 text-xs uppercase tracking-widest hover:bg-green-600 transition-all">
                     <i class="fab fa-whatsapp text-lg"></i> Buy on WhatsApp
                 </button>
             </div>
@@ -91,9 +91,9 @@
         let currentProduct = null;
 
         myProducts.forEach(product => {
-            // Mind Game Price Calculation
+            // Mind Game: দাম থেকে সংখ্যা বের করে ২০০ টাকা বেশি দেখানো (ক্রস চিহ্নের জন্য)
             const numericPrice = parseInt(product.price.replace(/[^0-9]/g, ''));
-            const fakeOldPrice = numericPrice + 200; // ২০০ টাকা বেশি দেখানো হচ্ছে
+            const fakeOldPrice = numericPrice + 200;
 
             container.innerHTML += `
                 <div class="product-card bg-white rounded-2xl border border-gray-100 overflow-hidden flex flex-col h-full shadow-sm">
