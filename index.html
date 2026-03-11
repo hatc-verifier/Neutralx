@@ -3,188 +3,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NeutralX | Premium Motorcycle Spare Parts</title>
-    <meta name="description" content="High-quality motorcycle engine parts, accessories, and spare parts in Bangladesh.">
+    <title>NeutralX | Premium Motorcycle Parts</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         html { scroll-behavior: smooth; }
-        .bg-dark { background-color: #0f172a; }
-        .text-accent { color: #dc2626; }
-        .bg-accent { background-color: #dc2626; }
-        .product-card:hover { transform: translateY(-8px); border-color: #dc2626; }
-        .hero-overlay { background: linear-gradient(to bottom, rgba(15, 23, 42, 0.7), #0f172a); }
+        .nav-link { position: relative; }
+        .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -4px; left: 0; background-color: #dc2626; transition: width 0.3s; }
+        .nav-link:hover::after { width: 100%; }
+        .product-card { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .product-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); }
+        .hero-bg { background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.9)), url('30019.jpg'); background-size: cover; background-position: center; }
     </style>
 </head>
-<body class="bg-slate-900 text-slate-100 font-sans">
+<body class="bg-gray-50 font-sans text-slate-900">
 
-    <nav class="bg-slate-900/95 backdrop-blur-md sticky top-0 z-50 border-b border-slate-800">
-        <div class="container mx-auto px-4 h-20 flex justify-between items-center">
-            <div class="flex items-center gap-3">
-                <img src="29173.jpg" class="h-10">
-                <h1 class="text-2xl font-black tracking-tighter uppercase">Neutral<span class="text-accent">X</span></h1>
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-100">
+        <div class="container mx-auto px-4 h-16 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <img src="29173.jpg" class="h-8 md:h-10">
+                <span class="text-xl md:text-2xl font-black tracking-tighter uppercase">Neutral<span class="text-red-600">X</span></span>
             </div>
-            <div class="hidden md:flex gap-8 text-xs font-bold uppercase tracking-widest">
-                <a href="#" class="text-accent">Home</a>
-                <a href="#shop" class="hover:text-accent transition">Products</a>
-                <a href="#categories" class="hover:text-accent transition">Categories</a>
-                <a href="#about" class="hover:text-accent transition">About</a>
-                <a href="#contact" class="hover:text-accent transition">Contact</a>
-            </div>
+            
+            <nav class="hidden md:flex gap-8 text-[12px] font-bold uppercase tracking-widest text-slate-600">
+                <a href="#" class="nav-link text-red-600">Home</a>
+                <a href="#shop" class="nav-link hover:text-red-600">Shop</a>
+                <a href="#footer" class="nav-link hover:text-red-600">Contact</a>
+            </nav>
+
             <div class="flex items-center gap-4">
-                <i class="fas fa-search cursor-pointer hover:text-accent"></i>
-                <div class="relative">
-                    <i class="fas fa-shopping-cart text-xl"></i>
-                    <span class="absolute -top-2 -right-2 bg-accent text-white text-[10px] px-1.5 py-0.5 rounded-full">0</span>
+                <i class="fas fa-search text-slate-400 cursor-pointer hover:text-red-600 transition"></i>
+                <div class="relative cursor-pointer">
+                    <i class="fas fa-shopping-cart text-lg"></i>
+                    <span class="absolute -top-2 -right-2 bg-red-600 text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full">0</span>
                 </div>
             </div>
         </div>
-    </nav>
+    </header>
 
-    <section class="relative h-[80vh] flex items-center justify-center text-center overflow-hidden">
-        <div class="absolute inset-0 bg-[url('30019.jpg')] bg-cover bg-center"></div>
-        <div class="absolute inset-0 hero-overlay"></div>
-        <div class="relative z-10 px-4">
-            <span class="bg-accent text-white text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-[0.3em] mb-6 inline-block">Premium Quality</span>
-            <h2 class="text-4xl md:text-7xl font-black mb-6 leading-tight uppercase italic">High Quality <br> <span class="text-accent">Motorcycle Parts</span></h2>
-            <p class="text-slate-400 max-w-2xl mx-auto mb-10 text-sm md:text-lg">Reliable parts for every ride. We ensure safe and smooth riding with our trusted engine components and accessories.</p>
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="#shop" class="bg-accent hover:bg-red-700 text-white font-black px-10 py-4 rounded-xl transition uppercase tracking-widest shadow-lg shadow-red-900/20">Shop Now</a>
-                <a href="#categories" class="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white font-black px-10 py-4 rounded-xl transition border border-white/10 uppercase tracking-widest">View Products</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-20 bg-slate-900 border-b border-slate-800">
-        <div class="container mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div class="text-center p-6 bg-slate-800/50 rounded-2xl border border-slate-700 hover:border-accent transition">
-                <i class="fas fa-award text-3xl text-accent mb-4"></i>
-                <h4 class="font-bold uppercase text-xs mb-2">High Quality</h4>
-                <p class="text-slate-500 text-[10px]">Genuine certified parts only.</p>
-            </div>
-            <div class="text-center p-6 bg-slate-800/50 rounded-2xl border border-slate-700 hover:border-accent transition">
-                <i class="fas fa-wallet text-3xl text-accent mb-4"></i>
-                <h4 class="font-bold uppercase text-xs mb-2">Affordable Price</h4>
-                <p class="text-slate-500 text-[10px]">Best value for your money.</p>
-            </div>
-            <div class="text-center p-6 bg-slate-800/50 rounded-2xl border border-slate-700 hover:border-accent transition">
-                <i class="fas fa-truck-fast text-3xl text-accent mb-4"></i>
-                <h4 class="font-bold uppercase text-xs mb-2">Fast Delivery</h4>
-                <p class="text-slate-500 text-[10px]">Nationwide quick shipping.</p>
-            </div>
-            <div class="text-center p-6 bg-slate-800/50 rounded-2xl border border-slate-700 hover:border-accent transition">
-                <i class="fas fa-handshake text-3xl text-accent mb-4"></i>
-                <h4 class="font-bold uppercase text-xs mb-2">Trusted Supplier</h4>
-                <p class="text-slate-500 text-[10px]">Reliable service since 2025.</p>
-            </div>
-        </div>
-    </section>
-
-    <main id="shop" class="py-20 bg-slate-900">
+    <section class="hero-bg py-16 md:py-24 text-center text-white">
         <div class="container mx-auto px-4">
-            <div class="flex justify-between items-end mb-12">
-                <div>
-                    <h3 class="text-3xl font-black uppercase italic tracking-tighter">Featured <span class="text-accent">Collection</span></h3>
-                    <p class="text-slate-500 text-xs mt-2 uppercase tracking-widest">Explore our popular spare parts</p>
-                </div>
-                <div class="hidden md:flex gap-3">
-                    <button class="bg-accent px-4 py-2 rounded-lg text-[10px] font-bold uppercase">All</button>
-                    <button class="bg-slate-800 px-4 py-2 rounded-lg text-[10px] font-bold uppercase hover:bg-slate-700">Yamaha</button>
-                    <button class="bg-slate-800 px-4 py-2 rounded-lg text-[10px] font-bold uppercase hover:bg-slate-700">Honda</button>
-                </div>
+            <span class="bg-red-600 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-4 inline-block">Premium Collection</span>
+            <h2 class="text-3xl md:text-5xl font-black uppercase tracking-tighter mb-4">Upgrade Your Ride</h2>
+            <p class="text-gray-400 text-sm md:text-base max-w-xl mx-auto font-medium">বাংলাদেশের সেরা মোটরসাইকেল এক্সেসরিজ এখন এক জায়গায়। কোয়ালিটি এবং আস্থার নাম NeutralX।</p>
+            <div class="mt-8">
+                <a href="#shop" class="bg-white text-slate-900 px-8 py-3 rounded-full font-bold uppercase text-xs hover:bg-red-600 hover:text-white transition-all shadow-xl">Explore Shop</a>
             </div>
-
-            <div id="product-container" class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10">
-                </div>
         </div>
+    </section>
+
+    <main id="shop" class="container mx-auto px-4 py-12">
+        <div class="flex items-end justify-between mb-10">
+            <div>
+                <div class="flex items-center gap-2 mb-1">
+                    <div class="w-8 h-[2px] bg-red-600"></div>
+                    <span class="text-red-600 text-[10px] font-bold uppercase tracking-widest">Our Store</span>
+                </div>
+                <h3 class="text-2xl font-black uppercase italic tracking-tight">Latest Collection</h3>
+            </div>
+            <div class="hidden sm:block">
+                <select class="bg-white border border-gray-200 text-xs font-bold px-4 py-2 rounded-lg outline-none cursor-pointer">
+                    <option>All Categories</option>
+                    <option>Engine Parts</option>
+                    <option>Exterior</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="product-container" class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+            </div>
     </main>
 
-    <section id="about" class="py-24 bg-slate-800/30 border-y border-slate-800">
-        <div class="container mx-auto px-4 grid md:grid-cols-2 items-center gap-16">
-            <img src="1004.jpg" class="rounded-[2rem] shadow-2xl border border-slate-700">
-            <div>
-                <h3 class="text-3xl font-black uppercase italic mb-6">Who is <span class="text-accent">NeutralX?</span></h3>
-                <p class="text-slate-400 leading-relaxed mb-6">NeutralX is a trusted supplier of high-quality motorcycle spare parts. We provide reliable parts for various motorcycle brands like Yamaha, Honda, Suzuki, Bajaj, and TVS.</p>
-                <ul class="space-y-4 text-sm font-bold text-slate-300">
-                    <li><i class="fas fa-check-circle text-accent mr-3"></i> Premium Engine Components</li>
-                    <li><i class="fas fa-check-circle text-accent mr-3"></i> Durable Exterior Accessories</li>
-                    <li><i class="fas fa-check-circle text-accent mr-3"></i> Mission: Ensure Safe & Smooth Riding</li>
-                </ul>
+    <div id="productModal" class="fixed inset-0 bg-slate-900/90 backdrop-blur-sm z-[100] hidden flex items-center justify-center p-4">
+        <div class="bg-white w-full max-w-lg rounded-3xl overflow-hidden relative shadow-2xl transition-all border border-white/20">
+            <button onclick="closeDetails()" class="absolute top-4 right-4 bg-gray-100 w-10 h-10 rounded-full flex items-center justify-center text-slate-800 text-2xl z-10 hover:bg-red-600 hover:text-white transition">&times;</button>
+            <div class="bg-gray-50 p-10 flex items-center justify-center border-b">
+                <img id="modalImg" src="" class="max-h-64 object-contain">
+            </div>
+            <div class="p-8">
+                <h2 id="modalTitle" class="text-2xl font-black text-slate-900 mb-2 uppercase tracking-tight"></h2>
+                <p id="modalPrice" class="text-red-600 font-black text-3xl mb-4"></p>
+                <div class="bg-gray-50 p-4 rounded-2xl border-l-4 border-red-600 mb-8">
+                    <p id="modalDesc" class="text-slate-600 text-xs leading-relaxed"></p>
+                </div>
+                <button onclick="confirmOrder()" class="w-full bg-slate-900 text-white py-4 rounded-2xl font-bold flex items-center justify-center gap-3 text-sm uppercase tracking-widest hover:bg-green-600 transition-all shadow-lg active:scale-95">
+                    <i class="fab fa-whatsapp text-xl"></i> Order via WhatsApp
+                </button>
             </div>
         </div>
-    </section>
+    </div>
 
-    <section id="contact" class="py-20 bg-slate-900">
-        <div class="container mx-auto px-4 text-center max-w-4xl">
-            <h3 class="text-3xl font-black uppercase italic mb-12">Get In <span class="text-accent">Touch</span></h3>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-8 bg-slate-800 rounded-3xl">
-                    <i class="fas fa-phone text-2xl text-accent mb-4"></i>
-                    <p class="text-xs uppercase font-black text-slate-400 mb-1">Call Us</p>
-                    <p class="font-bold">+8801303842242</p>
+    <footer id="footer" class="bg-white pt-16 pb-8 border-t border-slate-100">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8 mb-12">
+                <div class="text-center md:text-left">
+                    <h1 class="text-2xl font-black uppercase mb-2">Neutral<span class="text-red-600">X</span></h1>
+                    <p class="text-slate-500 text-sm max-w-xs">High-quality motorcycle parts and accessories. Elevate your performance.</p>
                 </div>
-                <div class="p-8 bg-slate-800 rounded-3xl">
-                    <i class="fab fa-whatsapp text-2xl text-green-500 mb-4"></i>
-                    <p class="text-xs uppercase font-black text-slate-400 mb-1">WhatsApp</p>
-                    <p class="font-bold">+8801303842242</p>
-                </div>
-                <div class="p-8 bg-slate-800 rounded-3xl">
-                    <i class="fas fa-envelope text-2xl text-accent mb-4"></i>
-                    <p class="text-xs uppercase font-black text-slate-400 mb-1">Email</p>
-                    <p class="font-bold">info@neutralx.com</p>
+                <div class="flex gap-6">
+                    <a href="https://www.facebook.com/share/18Phw7BBeV/" target="_blank" class="w-12 h-12 bg-slate-50 rounded-full flex items-center justify-center text-slate-400 hover:bg-red-600 hover:text-white transition-all shadow-sm">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@neutralx42" target="_blank" class="w-12 h-12 bg-slate-50 rounded-full flex items-center justify-center text-slate-400 hover:bg-slate-900 hover:text-white transition-all shadow-sm">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <footer class="bg-slate-950 pt-20 pb-10 border-t border-slate-800">
-        <div class="container mx-auto px-4 text-center">
-            <h1 class="text-3xl font-black tracking-tighter uppercase mb-4">Neutral<span class="text-accent">X</span></h1>
-            <p class="text-slate-500 text-sm max-w-sm mx-auto mb-10 tracking-widest uppercase">Motorcycle Parts Supplier</p>
-            
-            <div class="flex justify-center gap-10 mb-12 text-slate-400">
-                <a href="https://www.facebook.com/share/18Phw7BBeV/" target="_blank" class="hover:text-accent transition text-2xl"><i class="fab fa-facebook"></i></a>
-                <a href="https://www.tiktok.com/@neutralx42" target="_blank" class="hover:text-accent transition text-2xl"><i class="fab fa-tiktok"></i></a>
-                <a href="#" class="hover:text-accent transition text-2xl"><i class="fab fa-instagram"></i></a>
+            <div class="border-t border-slate-50 pt-8 text-center">
+                <p class="text-[10px] text-slate-400 font-bold uppercase tracking-[0.4em]">© 2026 NEUTRALX LTD | ALL RIGHTS RESERVED</p>
             </div>
-
-            <div class="flex justify-center gap-8 text-[10px] font-bold text-slate-600 uppercase mb-10">
-                <a href="#">Home</a>
-                <a href="#shop">Products</a>
-                <a href="#contact">Contact</a>
-            </div>
-            
-            <p class="text-[9px] text-slate-700 uppercase tracking-[0.4em] font-black border-t border-slate-900 pt-10">© 2026 NEUTRALX | ALL RIGHTS RESERVED</p>
         </div>
     </footer>
+
+    <a href="https://wa.me/8801303842242" target="_blank" class="fixed bottom-8 right-8 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-[0_10px_20px_rgba(34,197,94,0.3)] hover:scale-110 transition-all z-50">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
 
     <script src="products.js"></script>
     <script>
         const container = document.getElementById('product-container');
+        let currentProduct = null;
+
+        // Displaying products with slightly better card layout
         myProducts.forEach(product => {
             container.innerHTML += `
-                <div class="product-card bg-slate-800/50 rounded-3xl border border-slate-700 overflow-hidden flex flex-col transition-all duration-300">
-                    <div class="relative bg-white/5 h-44 md:h-64 p-6 flex items-center justify-center">
-                        <img src="${product.image}" class="max-h-full max-w-full object-contain drop-shadow-2xl">
+                <div class="product-card bg-white rounded-[2.5rem] border border-slate-100 overflow-hidden flex flex-col h-full group">
+                    <div class="relative bg-gray-50 h-44 md:h-60 p-6 cursor-pointer overflow-hidden flex items-center justify-center" onclick="openDetails('${product.id}')">
+                        <img src="${product.image}" class="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-red-600 text-white text-[8px] font-black px-2 py-1 rounded-md uppercase shadow-lg">New</span>
+                        </div>
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
-                        <h4 class="font-black text-xs md:text-sm uppercase tracking-tight mb-2 truncate">${product.name}</h4>
-                        <div class="flex justify-between items-center mb-6">
-                            <p class="text-accent font-black text-lg">${product.price}</p>
-                            <span class="text-[8px] text-green-500 font-bold uppercase tracking-widest">${product.stock || 'In Stock'}</span>
+                        <h4 class="font-bold text-xs md:text-sm text-slate-800 mb-2 truncate uppercase tracking-tight">${product.name}</h4>
+                        <div class="flex justify-between items-center mb-5 flex-wrap gap-2">
+                            <p class="text-red-600 font-black text-lg">${product.price}</p>
+                            <span class="text-[9px] text-green-600 font-bold uppercase px-2 py-1 bg-green-50 rounded-md">
+                                 ${product.stock || 'In Stock'}
+                            </span>
                         </div>
-                        <button onclick="directOrder('${product.name}', '${product.price}')" 
-                                class="w-full bg-slate-700 hover:bg-accent text-white py-3 rounded-xl text-[10px] font-black uppercase tracking-widest transition shadow-lg">
-                            Add To Cart
-                        </button>
+                        <button onclick="directOrder('${product.name}', '${product.price}')" class="w-full bg-slate-900 text-white py-3 rounded-2xl text-[10px] font-bold uppercase tracking-widest hover:bg-red-600 transition shadow-lg active:scale-95">Buy Now</button>
                     </div>
                 </div>
             `;
         });
 
+        function openDetails(id) {
+            const product = myProducts.find(p => p.id == id);
+            currentProduct = product;
+            document.getElementById('modalTitle').innerText = product.name;
+            document.getElementById('modalPrice').innerText = product.price;
+            document.getElementById('modalImg').src = product.image;
+            document.getElementById('modalDesc').innerText = product.details;
+            document.getElementById('productModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeDetails() {
+            document.getElementById('productModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
         function directOrder(name, price) {
             const msg = `হ্যালো NeutralX!\nআমি এটি কিনতে চাই:\n📦 ${name}\n💰 দাম: ${price}`;
             window.open(`https://wa.me/8801303842242?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+
+        function confirmOrder() {
+            if(currentProduct) directOrder(currentProduct.name, currentProduct.price);
         }
     </script>
 </body>
