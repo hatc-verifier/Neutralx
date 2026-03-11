@@ -30,6 +30,20 @@ const myProducts = [
         image: "1004.jpg",
         stock: "In Stock",
         details: "হাই-পারফরম্যান্স ব্রেকিং সিস্টেম এবং লিভারের কম্বো সেট।"
-    }
-];
-
+    },
+    {
+    id: 5,
+    name: "Yamaha R15M Limited Edition",
+    price: "৳ ৮,৫০০", 
+    image: "1007.jpg", 
+    stock: "In Stock",
+    details: "প্রিমিয়াম কোয়ালিটির আর-১৫ এম মডেলের জন্য স্পেশাল এডিশন পার্টস।"
+},
+{
+    id: 6,
+    name: "Yamaha V3 Matte Black Kit",
+    price: "৳ ৭,২০০", 
+    image: "1008.jpg", 
+    stock: "In Stock",
+    details: "ম্যাট ব্ল্যাক ফিনিশিংয়ের ফুল বডি কিট সেট।"
+},
