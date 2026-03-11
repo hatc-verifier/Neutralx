@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeutralX | Premium Motorcycle Parts</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+
+    <div class="bg-slate-900 text-white py-2 px-4 text-xs md:text-sm flex justify-between">
+        <span><i class="fas fa-phone"></i> 01303-842242</span>
+        <span class="hidden md:inline"><i class="fas fa-envelope"></i> infucelkayes0@gmail.com</span>
+    </div>
+
+    <nav class="bg-white shadow-md sticky top-0 z-50 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <img src="29173.jpg" alt="NeutralX Logo" class="h-10 md:h-14">
+                <h1 class="text-xl md:text-2xl font-bold">NEUTRAL<span class="text-red-600">X</span></h1>
+            </div>
+            <div class="flex gap-4">
+                <i class="fas fa-search text-xl"></i>
+                <i class="fas fa-shopping-cart text-xl text-red-600"></i>
+            </div>
+        </div>
+    </nav>
+
+    <div class="bg-slate-800 text-white py-12 px-6 text-center">
+        <h2 class="text-3xl md:text-5xl font-bold mb-4">PREMIUM MOTORCYCLE PARTS</h2>
+        <p class="text-gray-400 mb-6 font-mono text-sm uppercase italic">Est. 2025 | Quality Guaranteed</p>
+        <button class="bg-red-600 px-8 py-3 rounded-full font-bold hover:bg-red-700 transition">Shop Now</button>
+    </div>
+
+    <div class="container mx-auto p-6">
+        <h3 class="text-xl font-bold mb-6 border-l-4 border-red-600 pl-2 uppercase">Featured Parts</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-100">
+                <div class="h-48 bg-gray-200 flex items-center justify-center italic text-gray-400">
+                    Product Image (Add soon)
+                </div>
+                <div class="p-4">
+                    <h4 class="font-bold text-lg">Custom Engine Part</h4>
+                    <p class="text-red-600 font-bold mt-2">৳ ১৫,০০০</p>
+                    <button onclick="order('Custom Engine Part')" class="w-full mt-4 bg-slate-900 text-white py-2 rounded hover:bg-red-600 transition font-bold">Buy Now</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function order(productName) {
+            const msg = `হ্যালো NeutralX! আমি এই প্রোডাক্টটি কিনতে চাই: ${productName}. আমার নম্বর দিয়ে কনফার্ম করছি।`;
+            window.open(`https://wa.me/8801303842242?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+    </script>
+</body>
+</html>
+
