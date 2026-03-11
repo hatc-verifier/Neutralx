@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NeutralX | Motorcycle Parts</title>
+    <title>NeutralX | Premium Parts</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -18,78 +18,98 @@
         <div class="container mx-auto flex justify-between items-center">
             <div class="flex items-center gap-2">
                 <img src="29173.jpg" alt="NeutralX" class="h-10">
-                <h1 class="text-xl font-bold uppercase tracking-tight">Neutral<span class="text-red-600">X</span></h1>
+                <h1 class="text-xl font-bold uppercase">Neutral<span class="text-red-600">X</span></h1>
             </div>
-            <div class="flex gap-4 text-gray-600">
+            <div class="flex gap-4 text-gray-600 text-xl">
                 <i class="fas fa-search"></i>
                 <i class="fas fa-shopping-cart text-red-600"></i>
             </div>
         </div>
     </nav>
 
-    <div class="bg-slate-800 text-white py-12 px-6 text-center">
-        <h2 class="text-3xl font-bold mb-2 uppercase">Premium Parts Store</h2>
-        <p class="text-gray-400 text-sm mb-6 uppercase">Quality is our Priority</p>
-    </div>
-
     <div class="container mx-auto p-6">
-        <h3 class="text-lg font-bold mb-6 border-l-4 border-red-600 pl-2 uppercase">New Arrivals</h3>
+        <h3 class="text-lg font-bold mb-6 border-l-4 border-red-600 pl-2 uppercase tracking-wider">Motorcycle Parts Collection</h3>
+        
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
             
-            <div onclick="openDetails('Custom Engine Part', '৳ ১৫,০০০', '29173.jpg', 'এটি একটি প্রিমিয়াম কোয়ালিটির ইঞ্জিন পার্ট। টেকসই এবং হাই-পারফরম্যান্স নিশ্চিত করে।')" class="bg-white rounded-lg shadow cursor-pointer hover:shadow-lg transition overflow-hidden">
-                <img src="29173.jpg" class="w-full h-40 object-cover bg-gray-100">
-                <div class="p-3">
-                    <h4 class="font-bold text-sm truncate">Custom Engine Part</h4>
-                    <p class="text-red-600 font-bold mt-1 text-sm">৳ ১৫,০০০</p>
-                    <button class="w-full mt-3 bg-slate-100 text-slate-800 py-1 rounded text-xs font-bold hover:bg-red-600 hover:text-white">View Details</button>
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition">
+                <img onclick="openDetails('Custom Engine V2', '৳ ১২,৫০০', '29173.jpg', 'এটি একটি উন্নত মানের ইঞ্জিন পার্ট যা মোটরসাইকেলের কর্মক্ষমতা বৃদ্ধি করে। ১০০% অরিজিনাল জাপানিজ টেকনোলজি।')" 
+                     src="29173.jpg" class="w-full h-40 object-cover cursor-zoom-in bg-gray-50">
+                
+                <div class="p-3 text-center">
+                    <h4 class="font-bold text-sm text-slate-800 truncate">Custom Engine V2</h4>
+                    <p class="text-red-600 font-bold mt-1">৳ ১২,৫০০</p>
+                    
+                    <button onclick="directOrder('Custom Engine V2', '৳ ১২,৫০০')" 
+                            class="w-full mt-3 bg-slate-900 text-white py-2 rounded-lg text-xs font-bold hover:bg-red-600 transition uppercase tracking-tighter">
+                        Buy Now
+                    </button>
                 </div>
             </div>
 
             </div>
     </div>
 
-    <div id="productModal" class="fixed inset-0 bg-black bg-opacity-70 z-[100] hidden flex items-center justify-center p-4">
-        <div class="bg-white w-full max-w-md rounded-xl overflow-hidden relative">
-            <button onclick="closeDetails()" class="absolute top-3 right-3 text-gray-500 text-2xl">&times;</button>
-            <img id="modalImg" src="" class="w-full h-64 object-contain bg-gray-50">
+    <div id="productModal" class="fixed inset-0 bg-black bg-opacity-80 z-[100] hidden flex items-center justify-center p-4">
+        <div class="bg-white w-full max-w-lg rounded-2xl overflow-hidden relative shadow-2xl animate-modal">
+            <button onclick="closeDetails()" class="absolute top-4 right-4 bg-white/80 w-8 h-8 rounded-full shadow text-gray-800 text-xl">&times;</button>
+            <img id="modalImg" src="" class="w-full h-72 object-contain bg-gray-100 border-b">
             <div class="p-6">
-                <h2 id="modalTitle" class="text-2xl font-bold text-slate-800"></h2>
-                <p id="modalPrice" class="text-red-600 font-black text-xl my-2"></p>
-                <div class="bg-green-100 text-green-700 text-xs font-bold px-2 py-1 inline-block rounded mb-4">In Stock</div>
-                <p id="modalDesc" class="text-gray-600 text-sm leading-relaxed mb-6"></p>
+                <h2 id="modalTitle" class="text-2xl font-black text-slate-800 uppercase tracking-tight"></h2>
+                <p id="modalPrice" class="text-red-600 font-bold text-2xl my-3"></p>
+                <div class="text-gray-500 text-sm font-semibold mb-2 uppercase italic border-b pb-2">Product Description:</div>
+                <p id="modalDesc" class="text-gray-700 text-sm leading-relaxed mb-8 bg-gray-50 p-3 rounded-lg"></p>
                 
-                <button onclick="confirmOrder()" class="w-full bg-red-600 text-white py-3 rounded-lg font-bold shadow-lg hover:bg-red-700 flex items-center justify-center gap-2">
-                    <i class="fab fa-whatsapp"></i> Confirm Order via WhatsApp
+                <button id="modalBtn" onclick="confirmOrderFromModal()" class="w-full bg-green-600 text-white py-4 rounded-xl font-bold shadow-lg hover:bg-green-700 flex items-center justify-center gap-3 transition-all transform active:scale-95">
+                    <i class="fab fa-whatsapp text-xl"></i> WhatsApp-এ অর্ডার করুন
                 </button>
             </div>
         </div>
     </div>
 
-    <footer class="bg-slate-900 text-gray-500 py-10 text-center text-xs mt-20 uppercase tracking-widest">
-        © 2025 NeutralX Motorcycle Parts
+    <footer class="bg-slate-900 text-gray-500 py-10 text-center text-[10px] mt-20 uppercase tracking-[0.3em]">
+        © 2025 NEUTRALX PARTS CO.
     </footer>
 
     <script>
-        let currentProduct = "";
+        let currentPName = "";
+        let currentPPrice = "";
 
+        // ডিটেইলস পপআপ ওপেন করা
         function openDetails(name, price, img, desc) {
-            currentProduct = name;
+            currentPName = name;
+            currentPPrice = price;
             document.getElementById('modalTitle').innerText = name;
             document.getElementById('modalPrice').innerText = price;
             document.getElementById('modalImg').src = img;
             document.getElementById('modalDesc').innerText = desc;
             document.getElementById('productModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // স্ক্রল বন্ধ
         }
 
+        // পপআপ বন্ধ করা
         function closeDetails() {
             document.getElementById('productModal').classList.add('hidden');
+            document.body.style.overflow = 'auto'; // স্ক্রল চালু
         }
 
-        function confirmOrder() {
-            const msg = `হ্যালো NeutralX! আমি এই প্রোডাক্টটি কিনতে চাই: ${currentProduct}। আমার মোবাইল নম্বর দিয়ে অর্ডার কনফার্ম করতে চাই।`;
-            window.open(`https://wa.me/8801303842242?text=${encodeURIComponent(msg)}`, '_blank');
+        // সরাসরি বাই নাও বাটন কাজ করবে
+        function directOrder(name, price) {
+            const phoneNumber = "8801303842242";
+            const message = `হ্যালো NeutralX!\n\nআমি সরাসরি এই প্রোডাক্টটি কিনতে চাই:\n📦 নাম: ${name}\n💰 দাম: ${price}\n\nঅনুগ্রহ করে অর্ডারটি কনফার্ম করুন।`;
+            window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
+        }
+
+        // পপআপ থেকে কনফার্ম করা
+        function confirmOrderFromModal() {
+            directOrder(currentPName, currentPPrice);
+            closeDetails();
         }
     </script>
+
+    <style>
+        .animate-modal { animation: zoomIn 0.3s ease-out; }
+        @keyframes zoomIn { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    </style>
 </body>
 </html>
-
