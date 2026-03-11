@@ -8,67 +8,64 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         html { scroll-behavior: smooth; }
-        .bg-banner-dark { background-color: #1a202c; } /* ডার্ক ব্যানার কালার */
-        .nav-link:hover { color: #dc2626; border-bottom: 2px solid #dc2626; }
+        /* প্রফেশনাল ডার্ক কালার */
+        .bg-neutral-premium { background-color: #111827; }
+        .product-card { transition: transform 0.3s ease; }
+        .product-card:hover { transform: translateY(-5px); }
     </style>
 </head>
 <body class="bg-white font-sans text-slate-900">
 
-    <header class="bg-white sticky top-0 z-50 border-b border-gray-100 shadow-sm">
+    <header class="bg-white border-b border-gray-100 sticky top-0 z-50">
         <div class="container mx-auto px-4 h-16 flex justify-between items-center">
             <div class="flex items-center gap-2">
-                <img src="29173.jpg" class="h-8 md:h-10">
-                <span class="text-xl md:text-2xl font-black uppercase tracking-tighter">Neutral<span class="text-red-600">X</span></span>
+                <img src="29173.jpg" class="h-8 md:h-9">
+                <span class="text-xl font-black uppercase tracking-tighter">Neutral<span class="text-red-600">X</span></span>
             </div>
-            
-            <nav class="flex gap-4 md:gap-8 text-[11px] font-bold uppercase tracking-widest text-gray-600">
-                <a href="#" class="nav-link transition-all pb-1 text-red-600 border-b-2 border-red-600">Home</a>
-                <a href="#shop" class="nav-link transition-all pb-1">Shop</a>
-                <a href="#footer" class="nav-link transition-all pb-1">Contact</a>
-            </nav>
-
             <div class="flex items-center gap-4">
                 <i class="fas fa-search text-gray-400 cursor-pointer"></i>
-                <div class="relative">
-                    <i class="fas fa-shopping-cart text-lg"></i>
-                    <span class="absolute -top-2 -right-2 bg-red-600 text-white text-[9px] w-4 h-4 flex items-center justify-center rounded-full">0</span>
-                </div>
+                <i class="fas fa-shopping-cart text-lg"></i>
             </div>
         </div>
     </header>
 
-    <section class="bg-banner-dark py-12 md:py-20 text-center text-white relative overflow-hidden">
-        <div class="container mx-auto px-4 relative z-10">
-            <span class="bg-red-600 text-[9px] font-black px-3 py-1 rounded-md uppercase tracking-widest mb-4 inline-block">Premium Collection</span>
-            <h2 class="text-3xl md:text-5xl font-black uppercase tracking-tighter mb-4 italic">Upgrade Your Ride</h2>
-            <p class="text-gray-400 text-[11px] md:text-sm max-w-lg mx-auto leading-relaxed mb-8 uppercase tracking-widest">
+    <section class="bg-neutral-premium py-12 text-center text-white">
+        <div class="container mx-auto px-4">
+            <span class="text-red-500 text-[10px] font-bold uppercase tracking-[0.3em] mb-3 block">Premium Quality</span>
+            <h2 class="text-3xl md:text-4xl font-black uppercase tracking-tight mb-4 italic">Upgrade Your Ride</h2>
+            <p class="text-gray-400 text-[11px] md:text-xs max-w-md mx-auto mb-8 leading-relaxed">
                 বাংলাদেশে প্রিমিয়াম কোয়ালিটির মোটরসাইকেল পার্টস এখন আপনার হাতের নাগালে।
             </p>
-            <a href="#shop" class="bg-white text-gray-900 px-10 py-3 rounded-full font-black text-xs uppercase tracking-widest hover:bg-red-600 hover:text-white transition-all shadow-xl">Explore Shop</a>
-        </div>
-        <div class="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none">
-            <h1 class="text-[15vw] font-black uppercase">NEUTRALX</h1>
+            
+            <a href="#shop" class="inline-block bg-white text-gray-900 px-10 py-3 rounded-full font-black text-[11px] uppercase tracking-widest hover:bg-red-600 hover:text-white transition-all shadow-lg mb-8">
+                Explore Shop
+            </a>
+
+            <nav class="flex justify-center gap-8 text-[10px] font-bold uppercase tracking-widest text-gray-500 border-t border-gray-800 pt-6">
+                <a href="#" class="hover:text-red-500 transition">Home</a>
+                <a href="#shop" class="hover:text-red-500 transition">Shop</a>
+                <a href="#footer" class="hover:text-red-500 transition">About</a>
+                <a href="#footer" class="hover:text-red-500 transition">Contact</a>
+            </nav>
         </div>
     </section>
 
     <main id="shop" class="container mx-auto px-4 py-12">
         <div class="flex items-center gap-3 mb-10 border-l-4 border-red-600 pl-4">
-            <h3 class="text-2xl font-black uppercase italic tracking-tight">Our Store <span class="text-gray-400">/ Latest Collection</span></h3>
+            <h3 class="text-xl font-black uppercase italic tracking-tight text-gray-800">Latest Collection</h3>
         </div>
 
-        <div id="product-container" class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+        <div id="product-container" class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             </div>
     </main>
 
-    <footer id="footer" class="bg-gray-900 text-white pt-16 pb-8">
-        <div class="container mx-auto px-4 text-center">
-            <div class="flex justify-center gap-8 mb-10">
-                <a href="https://www.facebook.com/share/18Phw7BBeV/" class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-red-600 transition-all text-xl"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.tiktok.com/@neutralx42" class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-white hover:text-black transition-all text-xl"><i class="fab fa-tiktok"></i></a>
+    <footer id="footer" class="bg-gray-50 border-t py-12 text-center">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-center gap-6 mb-8">
+                <a href="https://www.facebook.com/share/18Phw7BBeV/" class="text-gray-400 hover:text-blue-600 text-xl"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.tiktok.com/@neutralx42" class="text-gray-400 hover:text-black text-xl"><i class="fab fa-tiktok"></i></a>
             </div>
-            <p class="text-gray-500 text-[10px] font-bold uppercase tracking-[0.3em] mb-4">NeutralX Motorcycle Parts Supplier</p>
-            <div class="h-px w-20 bg-red-600 mx-auto mb-8"></div>
-            <p class="text-[9px] text-gray-600 font-bold uppercase tracking-[0.4em]">© 2026 NEUTRALX LTD | ALL RIGHTS RESERVED</p>
+            <p class="text-[10px] text-gray-400 font-bold uppercase tracking-[0.3em]">© 2026 NEUTRALX | PREMIUM BIKE PARTS</p>
         </div>
     </footer>
 
@@ -77,16 +74,16 @@
     </a>
 
     <div id="productModal" class="fixed inset-0 bg-black/90 backdrop-blur-sm z-[100] hidden flex items-center justify-center p-4">
-        <div class="bg-white w-full max-w-sm rounded-3xl overflow-hidden relative shadow-2xl">
-            <button onclick="closeDetails()" class="absolute top-4 right-4 bg-gray-100 w-8 h-8 rounded-full flex items-center justify-center text-xl z-10 hover:bg-red-600 hover:text-white">&times;</button>
+        <div class="bg-white w-full max-w-sm rounded-3xl overflow-hidden relative">
+            <button onclick="closeDetails()" class="absolute top-4 right-4 bg-gray-100 w-8 h-8 rounded-full flex items-center justify-center text-xl hover:bg-red-500 hover:text-white transition">&times;</button>
             <div class="bg-gray-50 p-8 flex items-center justify-center border-b">
-                <img id="modalImg" src="" class="h-44 object-contain">
+                <img id="modalImg" src="" class="h-40 object-contain">
             </div>
             <div class="p-6">
-                <h2 id="modalTitle" class="text-xl font-black text-gray-900 mb-1 uppercase tracking-tight"></h2>
+                <h2 id="modalTitle" class="text-lg font-black text-gray-900 mb-1 uppercase tracking-tight"></h2>
                 <p id="modalPrice" class="text-red-600 font-black text-2xl mb-4"></p>
-                <p id="modalDesc" class="text-gray-500 text-[11px] leading-relaxed mb-6 bg-gray-50 p-3 rounded-lg border-l-2 border-red-600"></p>
-                <button onclick="confirmOrder()" class="w-full bg-gray-900 text-white py-4 rounded-2xl font-bold flex items-center justify-center gap-2 text-xs uppercase tracking-widest hover:bg-green-600 transition-all shadow-lg active:scale-95">
+                <p id="modalDesc" class="text-gray-500 text-[10px] leading-relaxed mb-6 bg-gray-50 p-3 rounded-lg"></p>
+                <button onclick="confirmOrder()" class="w-full bg-gray-900 text-white py-4 rounded-2xl font-bold flex items-center justify-center gap-2 text-[10px] uppercase tracking-widest hover:bg-green-600 transition-all">
                     <i class="fab fa-whatsapp text-lg"></i> Buy on WhatsApp
                 </button>
             </div>
@@ -98,20 +95,18 @@
         const container = document.getElementById('product-container');
         let currentProduct = null;
 
+        // প্রোডাক্ট রেন্ডার করা হচ্ছে
         myProducts.forEach(product => {
             container.innerHTML += `
-                <div class="bg-white rounded-3xl border border-gray-100 overflow-hidden flex flex-col h-full shadow-sm hover:shadow-xl transition-all duration-300">
-                    <div class="relative bg-gray-50 h-44 md:h-52 p-4 cursor-pointer flex items-center justify-center overflow-hidden" onclick="openDetails('${product.id}')">
-                        <img src="${product.image}" class="max-h-full max-w-full object-contain transition-transform duration-500 hover:scale-110">
+                <div class="product-card bg-white rounded-2xl border border-gray-100 overflow-hidden flex flex-col h-full shadow-sm">
+                    <div class="relative bg-gray-50 h-44 p-4 cursor-pointer flex items-center justify-center" onclick="openDetails('${product.id}')">
+                        <img src="${product.image}" class="max-h-full max-w-full object-contain">
                         <span class="absolute top-3 left-3 bg-red-600 text-white text-[8px] font-black px-2 py-0.5 rounded-md uppercase">New</span>
                     </div>
-                    <div class="p-5 flex flex-col flex-grow text-center md:text-left">
-                        <h4 class="font-bold text-[10px] md:text-xs text-gray-800 mb-2 uppercase tracking-tight truncate">${product.name}</h4>
-                        <div class="flex justify-between items-center mb-5 flex-wrap gap-2">
-                            <p class="text-red-600 font-black text-lg">${product.price}</p>
-                            <span class="text-[9px] text-green-600 font-bold uppercase">In Stock</span>
-                        </div>
-                        <button onclick="directOrder('${product.name}', '${product.price}')" class="w-full bg-gray-900 text-white py-3 rounded-xl text-[9px] font-bold uppercase tracking-widest hover:bg-red-600 transition shadow-md active:scale-95">Buy Now</button>
+                    <div class="p-4 flex flex-col flex-grow text-center">
+                        <h4 class="font-bold text-[10px] text-gray-800 mb-2 uppercase tracking-tight truncate">${product.name}</h4>
+                        <p class="text-red-600 font-black text-lg mb-4">${product.price}</p>
+                        <button onclick="directOrder('${product.name}', '${product.price}')" class="w-full bg-gray-900 text-white py-2.5 rounded-xl text-[9px] font-bold uppercase tracking-widest hover:bg-red-600 transition active:scale-95">Buy Now</button>
                     </div>
                 </div>
             `;
