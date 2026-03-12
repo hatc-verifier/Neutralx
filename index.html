@@ -94,7 +94,7 @@
             myProducts.forEach(product => {
                 const numericPrice = parseInt(product.price.replace(/[^0-9]/g, '')) || 0;
                 // ২০০ টাকা ক্রস প্রাইস মেইনটেইন করা হচ্ছে
-                const fakeOldPrice = numericPrice + 200;
+                const fakeOldPrice = numericPrice + 180000;
 
                 container.innerHTML += `
                     <div class="product-card bg-white rounded-2xl border border-gray-100 overflow-hidden flex flex-col h-full shadow-sm">
